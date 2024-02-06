@@ -16,7 +16,7 @@ namespace System.Collections.Generic
         internal ThreadSafeList()
         {
             _list = new List<T>();
-            _lock = new ReaderWriterLockSlim();
+            _lock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
         }
 
         public int Count
